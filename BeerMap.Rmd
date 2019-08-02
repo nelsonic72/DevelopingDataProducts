@@ -1,0 +1,35 @@
+---
+title: "Map of Local Breweries"
+author: "Eric John Nelson"
+date: "August 2, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Map of Breweries Near Me
+
+Many microbreweries have opened up near me in the past few years.  This is just a handful.  This page was created by me on August 2nd, 2019 and was created using R Markdown and Leaflet.
+
+
+```{r echo = FALSE}
+library(leaflet)
+beermap <- leaflet() %>%
+      addTiles() %>%
+addMarkers(lat=38.8471237 , lng=-77.3072571, popup="<a href='http://www.ornerybeer.com/' > Ornery Beer Company</a>") %>%
+addMarkers(lat=38.9077323 , lng=-77.272768, popup="<a href='https://www.caboosebrewing.com/vienna-va' > Caboose Tavern</a>") %>%
+addMarkers(lat=38.87303 , lng=-77.234084, popup="<a href='https://www.caboosebrewing.com/fairfax-va' > Caboose Commons</a>") %>%
+addMarkers(lat=38.8041736 , lng=-77.1405614, popup="<a href='https://www.aslinbeer.com/' > Aslin Beer Company</a>") %>%
+addMarkers(lat=38.9563734 , lng=-77.3769549, popup="<a href='https://www.aslinbeer.com/' > Aslin Beer Company</a>") %>%
+addMarkers(lat=39.0161874 , lng=-77.477865, popup="<a href='https://www.lostrhino.com/' > Lost Rhino</a>") %>%
+addMarkers(lat=38.7424138 , lng=-77.523744, popup="<a href='https://2silosbrewing.com/' > 2 Silos</a>") %>%
+addMarkers(lat=38.8487295 , lng=-77.305482, popup="<a href='http://www.chubbysquirrelbrewing.com/' > Chubby Squirrel</a>") %>%
+addMarkers(lat=38.8872229 , lng=-77.4330836, popup="<a href='http://www.honorbrewing.com/' > Honor Brewing</a>") %>%
+addMarkers(lat=38.8929078 , lng=-77.4396008, popup="<a href='https://msbrewing.com/' > Mustang Sally Brewing</a>")
+
+
+beermap
+```
+
