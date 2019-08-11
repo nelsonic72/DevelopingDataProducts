@@ -1,0 +1,32 @@
+---
+title: "DevelopingDataProductsWeek3"
+author: "Eric John Nelson"
+date: "August 11, 2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Overview
+
+
+This presentation was created by Eric J Nelson on August 11, 2019.  It meets the
+requirements for the week 3 assignment for Developing Data Products.
+
+This is a presentation of the mtcars dataset in an interactive plot using plotly.
+
+## Cars - HP~mpg by # of cylinders
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(plotly)
+library(webshot)
+data(mtcars)
+carPlot <- plot_ly(mtcars, x=mtcars$hp, y=mtcars$mpg, mode="markers", color = mtcars$cyl, size=mtcars$wt) %>%
+      layout(xaxis = list(title = "Horepower"), yaxis = list(title="Miles per Gallon"))
+carPlot
+```
+This plot displays the mtcars dataset by plotting HP and MPH as the x and y in a scatterplot.  The color references the 3 of cyclinders for each car and the size of the circle represents the weight(1000 lbs).
+
